@@ -1,0 +1,292 @@
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        
+        #wheels {
+            position: relative;
+            width: 43.75rem;
+            height: 43.75rem;
+        }
+        
+        #wheel1,
+        #wheel2,
+        #wheel3 {
+            position: absolute;
+            transform: rotate(45deg);
+        }
+        
+        #wheel1 {
+            top: 3.125rem;
+            left: 3.125rem;
+            width: 37.5rem;
+            height: 37.5rem;
+        }
+        
+        #wheel2 {
+            top: 0;
+            left: 0;
+            width: 43.75rem;
+            height: 43.75rem;
+            z-index: 10;
+        }
+        
+        #wheel3 {
+            border: none;
+            width: 50rem;
+            height: 50rem;
+            z-index: -10;
+        }
+        
+        .wheel {
+            border-radius: 50%;
+            border: 0.0625rem solid #000;
+        }
+        
+        .sector {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            transform-origin: right;
+            text-align: center;
+            line-height: 18.75rem;
+            border-right: 0.0625rem solid #000;
+            font-size: 1.5em;
+        }
+        
+        .sector:nth-child(1) {
+            transform: rotate(0deg);
+        }
+        
+        .sector:nth-child(2) {
+            transform: rotate(30deg);
+        }
+        
+        .sector:nth-child(3) {
+            transform: rotate(60deg);
+        }
+        
+        .sector:nth-child(4) {
+            transform: rotate(90deg);
+        }
+        
+        .sector:nth-child(5) {
+            transform: rotate(120deg);
+        }
+        
+        .sector:nth-child(6) {
+            transform: rotate(150deg);
+        }
+        
+        .sector:nth-child(7) {
+            transform: rotate(180deg);
+        }
+        
+        .sector:nth-child(8) {
+            transform: rotate(210deg);
+        }
+        
+        .sector:nth-child(9) {
+            transform: rotate(240deg);
+        }
+        
+        .sector:nth-child(10) {
+            transform: rotate(270deg);
+        }
+        
+        .sector:nth-child(11) {
+            transform: rotate(300deg);
+        }
+        
+        .sector:nth-child(12) {
+            transform: rotate(330deg);
+        }
+        
+        .text {
+            transform: rotate(-45deg);
+        }
+        
+        #wheel2 .text {
+            transform: rotate(-45deg);
+            position: relative;
+            left: -0.9375rem;
+            top: 0.625rem;
+        }
+        
+        #wheel3 .text {
+            transform: rotate(-45deg);
+            position: relative;
+            left: -1.875rem;
+            top: 1.25rem;
+        }
+        
+        #wheel3 .sector {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wheels">
+        <div id="wheel1" class="wheel">
+            <div class="sector">
+                <div class="text">黃鐘</div>
+            </div>
+            <div class="sector">
+                <div class="text">大呂</div>
+            </div>
+            <div class="sector">
+                <div class="text">太簇</div>
+            </div>
+            <div class="sector">
+                <div class="text">夾鐘</div>
+            </div>
+            <div class="sector">
+                <div class="text">姑洗</div>
+            </div>
+            <div class="sector">
+                <div class="text">仲呂</div>
+            </div>
+            <div class="sector">
+                <div class="text">蕤賓</div>
+            </div>
+            <div class="sector">
+                <div class="text">林鐘</div>
+            </div>
+            <div class="sector">
+                <div class="text">夷則</div>
+            </div>
+            <div class="sector">
+                <div class="text">南呂</div>
+            </div>
+            <div class="sector">
+                <div class="text">無射</div>
+            </div>
+            <div class="sector">
+                <div class="text">應鐘</div>
+            </div>
+        </div>
+
+        <div id="wheel2" class="wheel">
+            <div class="sector">
+                <div class="text">C</div>
+            </div>
+            <div class="sector">
+                <div class="text">C♯/D♭</div>
+            </div>
+            <div class="sector">
+                <div class="text">D</div>
+            </div>
+            <div class="sector">
+                <div class="text">D♯/E♭</div>
+            </div>
+            <div class="sector">
+                <div class="text">E</div>
+            </div>
+            <div class="sector">
+                <div class="text">F</div>
+            </div>
+            <div class="sector">
+                <div class="text">F♯/G♭</div>
+            </div>
+            <div class="sector">
+                <div class="text">G</div>
+            </div>
+            <div class="sector">
+                <div class="text">G♯/A♭</div>
+            </div>
+            <div class="sector">
+                <div class="text">A</div>
+            </div>
+            <div class="sector">
+                <div class="text">A♯/B♭</div>
+            </div>
+            <div class="sector">
+                <div class="text">B</div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div id="wheel3" class="wheel">
+        <div class="sector">
+            <div class="text">宮</div>
+        </div>
+        <div class="sector">
+            <div class="text"></div>
+        </div>
+        <div class="sector">
+            <div class="text">商</div>
+        </div>
+        <div class="sector">
+            <div class="text"></div>
+        </div>
+        <div class="sector">
+            <div class="text">角</div>
+        </div>
+        <div class="sector">
+            <div class="text"></div>
+        </div>
+        <div class="sector">
+            <div class="text">變徵</div>
+        </div>
+        <div class="sector">
+            <div class="text">徵</div>
+        </div>
+        <div class="sector">
+            <div class="text"></div>
+        </div>
+        <div class="sector">
+            <div class="text">羽</div>
+        </div>
+        <div class="sector">
+            <div class="text"></div>
+        </div>
+        <div class="sector">
+            <div class="text">變宮</div>
+        </div>
+        <!--
+    <script>
+        var wheel1 = document.getElementById('wheel1');
+        var wheel2 = document.getElementById('wheel2');
+
+        function rotate(e) {
+            var x = e.clientX - wheel2.offsetLeft - wheel2.offsetWidth / 2;
+            var y = e.clientY - wheel2.offsetTop - wheel2.offsetHeight / 2;
+            var deg = Math.atan2(y, x) * 180 / Math.PI;
+
+            wheel1.style.transform = 'rotate(' + deg + 'deg)';
+            wheel2.style.transform = 'rotate(' + deg + 'deg)';
+        }
+
+        wheel2.onmousemove = rotate;
+        wheel2.ontouchmove = function(e) {
+            e.preventDefault();
+            var touch = e.touches[0];
+            rotate(touch);
+        };
+    </script>
+-->
+        <script src="./propeller.min.js"></script>
+        <script>
+            new Propeller(document.getElementById('wheels'), {
+                inertia: 0.99,
+                onDragStop: function() {
+                    console.log('stop');
+                },
+                onDragStart: function() {
+                    console.log('start');
+                }
+            });
+        </script>
+</body>
+
+</html>
