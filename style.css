@@ -1,0 +1,135 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    text-align: center;
+}
+
+#wheels {
+    position: relative;
+    width: 43.75rem;
+    height: 43.75rem;
+}
+
+#wheel1,
+#wheel2,
+#wheel3 {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+#wheel1 {
+    top: 3.125rem;
+    left: 3.125rem;
+    width: 37.5rem;
+    height: 37.5rem;
+}
+
+#wheel2 {
+    top: 0;
+    left: 0;
+    width: 43.75rem;
+    height: 43.75rem;
+    z-index: 10;
+}
+
+#wheel3 {
+    border: none;
+    width: 50rem;
+    height: 50rem;
+    z-index: -10;
+}
+
+.wheel {
+    border-radius: 50%;
+    border: 0.0625rem solid #000;
+}
+
+.sector {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transform-origin: right;
+    text-align: center;
+    line-height: 18.75rem;
+    border-right: 0.0625rem solid #000;
+    font-size: 1.5em;
+}
+
+.sector:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.sector:nth-child(2) {
+    transform: rotate(30deg);
+}
+
+.sector:nth-child(3) {
+    transform: rotate(60deg);
+}
+
+.sector:nth-child(4) {
+    transform: rotate(90deg);
+}
+
+.sector:nth-child(5) {
+    transform: rotate(120deg);
+}
+
+.sector:nth-child(6) {
+    transform: rotate(150deg);
+}
+
+.sector:nth-child(7) {
+    transform: rotate(180deg);
+}
+
+.sector:nth-child(8) {
+    transform: rotate(210deg);
+}
+
+.sector:nth-child(9) {
+    transform: rotate(240deg);
+}
+
+.sector:nth-child(10) {
+    transform: rotate(270deg);
+}
+
+.sector:nth-child(11) {
+    transform: rotate(300deg);
+}
+
+.sector:nth-child(12) {
+    transform: rotate(330deg);
+}
+
+.text {
+    transform: rotate(-45deg);
+}
+
+#wheel2 .text {
+    transform: rotate(-45deg);
+    position: relative;
+    left: -0.9375rem;
+    top: 0.625rem;
+}
+
+#wheel3 .text {
+    transform: rotate(-45deg);
+    position: relative;
+    left: -1.875rem;
+    top: 1.25rem;
+}
+
+#wheel3 .sector {
+    border: none;
+}
+
+#switchText {
+    position: absolute;
+}
