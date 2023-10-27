@@ -137,6 +137,8 @@
                             ["黃鐘", "林鐘", "太簇", "南呂", "姑洗", "應鐘", "蕤賓", "大呂", "夷則", "夾鐘", "無射", "仲呂"]];
         var wheel2Texts = [["C", "C♯/D♭", "D", "D♯/E♭", "E", "F", "F♯/G♭", "G", "G♯/A♭", "A", "A♯/B♭", "B"],
                             ["C", "G", "D", "A", "E", "B", "F♯/G♭", "C♯/D♭", "G♯/A♭", "D♯/E♭", "A♯/B♭", "F"]];
+        var wheel3Texts = [["宮", "", "商", "", "角", "", "變徵", "徵", "", "羽", "", "變宮"],
+                            ["宮", "徵", "商", "羽", "角", "變宮", "變徵", "", "", "", "", ""]];
 
         var switchTextButton = document.getElementById('switchText');
         switchTextButton.addEventListener('click', function() {
@@ -144,6 +146,7 @@
             for(let i = 0; i < 12; i++){
                 document.getElementById('wheel1').childNodes[i*2+1].innerHTML = '<div class="text">' + wheel1Texts[textSet%2][i] + "</div>";
                 document.getElementById('wheel2').childNodes[i*2+1].innerHTML = '<div class="text">' + wheel2Texts[textSet%2][i] + "</div>";
+                document.getElementById('wheel3').childNodes[i*2+1].innerHTML = '<div class="text">' + wheel3Texts[textSet%2][i] + "</div>";
             }
         });
     </script>
