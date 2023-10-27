@@ -1,3 +1,9 @@
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 8px;
+    }
+  }
+
 body {
     display: flex;
     background-color: #ced;
@@ -16,19 +22,23 @@ button {
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 2rem;
+    left: 2vw;
+}
+
+h1 {
+    font-size: 2rem;
 }
 
 #rotate {
-    transform-origin: 50% 50.05%;
+    position: fixed;
     width: 43.75rem;
     height: 43.75rem;
 }
 
 #wheels {
-    position: relative;
+    position: fixed;
     width: 43.75rem;
     height: 43.75rem;
 }
@@ -77,7 +87,7 @@ header {
     text-align: center;
     line-height: 18.75rem;
     border-right: 0.0625rem solid #555;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 .sector:nth-child(1) {
