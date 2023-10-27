@@ -1,11 +1,15 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <title>律呂圈</title>
 </head>
 
 <body>
-    <div id="wheels">
+    <header><h1>律呂圈</h1></header>
+    <main id="wheels">
+        <div id="rotate">
         <div id="wheel1" class="wheel">
             <div class="sector">
                 <div class="text">黃鐘</div>
@@ -83,47 +87,49 @@
                 <div class="text">B</div>
             </div>
         </div>
-    </div>
+        </div>
 
-    <div id="wheel3" class="wheel">
-        <div class="sector">
-            <div class="text">宮</div>
+        <div id="wheel3" class="wheel">
+            <div class="sector">
+                <div class="text">宮</div>
+            </div>
+            <div class="sector">
+                <div class="text"></div>
+            </div>
+            <div class="sector">
+                <div class="text">商</div>
+            </div>
+            <div class="sector">
+                <div class="text"></div>
+            </div>
+            <div class="sector">
+                <div class="text">角</div>
+            </div>
+            <div class="sector">
+                <div class="text"></div>
+            </div>
+            <div class="sector">
+                <div class="text">變徵</div>
+            </div>
+            <div class="sector">
+                <div class="text">徵</div>
+            </div>
+            <div class="sector">
+                <div class="text"></div>
+            </div>
+            <div class="sector">
+                <div class="text">羽</div>
+            </div>
+            <div class="sector">
+                <div class="text"></div>
+            </div>
+            <div class="sector">
+                <div class="text">變宮</div>
+            </div>
         </div>
-        <div class="sector">
-            <div class="text"></div>
-        </div>
-        <div class="sector">
-            <div class="text">商</div>
-        </div>
-        <div class="sector">
-            <div class="text"></div>
-        </div>
-        <div class="sector">
-            <div class="text">角</div>
-        </div>
-        <div class="sector">
-            <div class="text"></div>
-        </div>
-        <div class="sector">
-            <div class="text">變徵</div>
-        </div>
-        <div class="sector">
-            <div class="text">徵</div>
-        </div>
-        <div class="sector">
-            <div class="text"></div>
-        </div>
-        <div class="sector">
-            <div class="text">羽</div>
-        </div>
-        <div class="sector">
-            <div class="text"></div>
-        </div>
-        <div class="sector">
-            <div class="text">變宮</div>
-        </div>
-    </div>
-    <button id="switchText">換排列方式</button>
+    </main>
+    
+    <button id="switchText">換排列順序</button>
     <script>
         var textSet = 0;
         var wheel1Texts = [["黃鐘", "大呂", "太簇", "夾鐘", "姑洗", "仲呂", "蕤賓", "林鐘", "夷則", "南呂", "無射", "應鐘"],
@@ -142,7 +148,7 @@
     </script>
     <script src="propeller.min.js"></script>
     <script>
-        new Propeller(document.getElementById('wheels'), {
+        new Propeller(document.getElementById('rotate'), {
             inertia: 0.98,
             onDragStop: function() {
                 console.log('stop');

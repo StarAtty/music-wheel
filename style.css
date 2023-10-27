@@ -1,12 +1,30 @@
-
 body {
     display: flex;
+    background-color: #ced;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+button {
+    padding: 0.5rem;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+}
+
+#rotate {
+    transform-origin: 50% 50.05%;
+    width: 43.75rem;
+    height: 43.75rem;
 }
 
 #wheels {
@@ -34,14 +52,16 @@ body {
     left: 0;
     width: 43.75rem;
     height: 43.75rem;
-    z-index: 10;
+    z-index: 100;
 }
 
 #wheel3 {
     border: none;
-    width: 50rem;
-    height: 50rem;
-    z-index: -10;
+    top: 0;
+    left: 0;
+    width: 43.75rem;
+    height: 43.75rem;
+    z-index: -100;
 }
 
 .wheel {
@@ -56,20 +76,23 @@ body {
     transform-origin: right;
     text-align: center;
     line-height: 18.75rem;
-    border-right: 0.0625rem solid #000;
+    border-right: 0.0625rem solid #555;
     font-size: 1.5em;
 }
 
 .sector:nth-child(1) {
     transform: rotate(0deg);
+    z-index: 1;
 }
 
 .sector:nth-child(2) {
     transform: rotate(30deg);
+    z-index: 2;
 }
 
 .sector:nth-child(3) {
     transform: rotate(60deg);
+    z-index: 3;
 }
 
 .sector:nth-child(4) {
@@ -113,17 +136,15 @@ body {
 }
 
 #wheel2 .text {
-    transform: rotate(-45deg);
     position: relative;
-    left: -0.9375rem;
-    top: 0.625rem;
+    left: -0.75rem;
+    top: 0.75rem;
 }
 
 #wheel3 .text {
-    transform: rotate(-45deg);
     position: relative;
-    left: -1.875rem;
-    top: 1.25rem;
+    left: -3.3125rem;
+    top: -1.9375rem;
 }
 
 #wheel3 .sector {
