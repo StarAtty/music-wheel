@@ -13,7 +13,7 @@ var resetButton = document.getElementById('reset');
 switchTextButton.addEventListener('click', function() {
     textSet += 1;
     let set = textSet % 2
-    switchTextButton.innerText = (set) ? "相生排序" : "半音排序";
+    switchTextButton.innerText = (set) ? "半音排序" : "相生排序";
     for(let i = 0; i < 12; i++){
         document.getElementById('wheel1').childNodes[i*2+1].innerHTML = '<div class="text">' + wheel1Texts[set][i] + "</div>";
         document.getElementById('wheel2').childNodes[i*2+1].innerHTML = '<div class="text">' + wheel2Texts[set][i] + "</div>";
