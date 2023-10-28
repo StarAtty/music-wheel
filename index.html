@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,7 +10,14 @@
 
 <body>
     <header><h1>律呂圈</h1></header>
-    <main id="wheels">
+    
+    <div id="middle">
+        <button id="switchText">半音排序</button>
+        <button id="switchWheel">轉外圈</button>
+        <button id="reset">重置</button>
+    </div>
+    <main>
+        <div id="wheels">
         <div id="rotate">
         <div id="wheel1" class="wheel">
             <div class="sector">
@@ -128,41 +136,11 @@
                 <div class="text">變宮</div>
             </div>
         </div>
+        </div>
     </main>
-    
-    <button id="switchText">換排列順序</button>
-    <script>
-        var textSet = 0;
-        var wheel1Texts = [["黃鐘", "大呂", "太簇", "夾鐘", "姑洗", "仲呂", "蕤賓", "林鐘", "夷則", "南呂", "無射", "應鐘"],
-                            ["黃鐘", "林鐘", "太簇", "南呂", "姑洗", "應鐘", "蕤賓", "大呂", "夷則", "夾鐘", "無射", "仲呂"]];
-        var wheel2Texts = [["C", "C♯/D♭", "D", "D♯/E♭", "E", "F", "F♯/G♭", "G", "G♯/A♭", "A", "A♯/B♭", "B"],
-                            ["C", "G", "D", "A", "E", "B", "F♯/G♭", "C♯/D♭", "G♯/A♭", "D♯/E♭", "A♯/B♭", "F"]];
-        var wheel3Texts = [["宮", "", "商", "", "角", "", "變徵", "徵", "", "羽", "", "變宮"],
-                            ["宮", "徵", "商", "羽", "角", "變宮", "變徵", "", "", "", "", ""]];
 
-        var switchTextButton = document.getElementById('switchText');
-        switchTextButton.addEventListener('click', function() {
-            textSet += 1;
-            for(let i = 0; i < 12; i++){
-                document.getElementById('wheel1').childNodes[i*2+1].innerHTML = '<div class="text">' + wheel1Texts[textSet%2][i] + "</div>";
-                document.getElementById('wheel2').childNodes[i*2+1].innerHTML = '<div class="text">' + wheel2Texts[textSet%2][i] + "</div>";
-                document.getElementById('wheel3').childNodes[i*2+1].innerHTML = '<div class="text">' + wheel3Texts[textSet%2][i] + "</div>";
-            }
-        });
-    </script>
     <script src="propeller.min.js"></script>
-    <script>
-        new Propeller(document.getElementById('rotate'), {
-            inertia: 0.98,
-            onDragStop: function() {
-                console.log('stop');
-            },
-            onDragStart: function() {
-                console.log('start');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
-
