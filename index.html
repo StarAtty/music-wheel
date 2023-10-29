@@ -12,8 +12,22 @@
 </head>
 
 <body>
-    <header><h1>律呂圈</h1></header>
-    
+    <header>
+        <h1>律呂圈</h1>
+    </header>
+
+    <div id="top-right">
+        <h2>三分損益</h2>
+        <label for="string">弦長</label>
+        <span id="stringLength">81</span>
+        <input type="range" id="string" min="0" max="81" value="81" step="0.001"></input>
+        <section>
+            <button id="subtraction">三分去一</button>
+            <button id="addition" disabled>三分益一</button>
+            <button id="resetLength">重置</button>
+        </section>
+    </div>
+
     <div id="middle">
         <button id="switchText">換排序</button>
         <button id="switchWheel">轉內圈</button>
@@ -21,124 +35,124 @@
     </div>
     <main>
         <div id="wheels">
-        <div id="rotate">
-        <div id="wheel1" class="wheel">
-            <div class="sector">
-                <div class="text">黃鐘</div>
-            </div>
-            <div class="sector">
-                <div class="text">大呂</div>
-            </div>
-            <div class="sector">
-                <div class="text">太簇</div>
-            </div>
-            <div class="sector">
-                <div class="text">夾鐘</div>
-            </div>
-            <div class="sector">
-                <div class="text">姑洗</div>
-            </div>
-            <div class="sector">
-                <div class="text">仲呂</div>
-            </div>
-            <div class="sector">
-                <div class="text">蕤賓</div>
-            </div>
-            <div class="sector">
-                <div class="text">林鐘</div>
-            </div>
-            <div class="sector">
-                <div class="text">夷則</div>
-            </div>
-            <div class="sector">
-                <div class="text">南呂</div>
-            </div>
-            <div class="sector">
-                <div class="text">無射</div>
-            </div>
-            <div class="sector">
-                <div class="text">應鐘</div>
-            </div>
-        </div>
+            <div id="rotate">
+                <div id="wheel1" class="wheel">
+                    <div class="sector">
+                        <div class="text">黃鐘</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">大呂</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">太簇</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">夾鐘</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">姑洗</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">仲呂</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">蕤賓</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">林鐘</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">夷則</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">南呂</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">無射</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">應鐘</div>
+                    </div>
+                </div>
 
-        <div id="wheel2" class="wheel">
-            <div class="sector">
-                <div class="text">C</div>
+                <div id="wheel2" class="wheel">
+                    <div class="sector">
+                        <div class="text">C</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">C♯/D♭</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">D</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">D♯/E♭</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">E</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">F</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">F♯/G♭</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">G</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">G♯/A♭</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">A</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">A♯/B♭</div>
+                    </div>
+                    <div class="sector">
+                        <div class="text">B</div>
+                    </div>
+                </div>
             </div>
-            <div class="sector">
-                <div class="text">C♯/D♭</div>
-            </div>
-            <div class="sector">
-                <div class="text">D</div>
-            </div>
-            <div class="sector">
-                <div class="text">D♯/E♭</div>
-            </div>
-            <div class="sector">
-                <div class="text">E</div>
-            </div>
-            <div class="sector">
-                <div class="text">F</div>
-            </div>
-            <div class="sector">
-                <div class="text">F♯/G♭</div>
-            </div>
-            <div class="sector">
-                <div class="text">G</div>
-            </div>
-            <div class="sector">
-                <div class="text">G♯/A♭</div>
-            </div>
-            <div class="sector">
-                <div class="text">A</div>
-            </div>
-            <div class="sector">
-                <div class="text">A♯/B♭</div>
-            </div>
-            <div class="sector">
-                <div class="text">B</div>
-            </div>
-        </div>
-        </div>
 
-        <div id="wheel3" class="wheel">
-            <div class="sector">
-                <div class="text">宮</div>
+            <div id="wheel3" class="wheel">
+                <div class="sector">
+                    <div class="text">宮</div>
+                </div>
+                <div class="sector">
+                    <div class="text"></div>
+                </div>
+                <div class="sector">
+                    <div class="text">商</div>
+                </div>
+                <div class="sector">
+                    <div class="text"></div>
+                </div>
+                <div class="sector">
+                    <div class="text">角</div>
+                </div>
+                <div class="sector">
+                    <div class="text"></div>
+                </div>
+                <div class="sector">
+                    <div class="text">變徵</div>
+                </div>
+                <div class="sector">
+                    <div class="text">徵</div>
+                </div>
+                <div class="sector">
+                    <div class="text"></div>
+                </div>
+                <div class="sector">
+                    <div class="text">羽</div>
+                </div>
+                <div class="sector">
+                    <div class="text"></div>
+                </div>
+                <div class="sector">
+                    <div class="text">變宮</div>
+                </div>
             </div>
-            <div class="sector">
-                <div class="text"></div>
-            </div>
-            <div class="sector">
-                <div class="text">商</div>
-            </div>
-            <div class="sector">
-                <div class="text"></div>
-            </div>
-            <div class="sector">
-                <div class="text">角</div>
-            </div>
-            <div class="sector">
-                <div class="text"></div>
-            </div>
-            <div class="sector">
-                <div class="text">變徵</div>
-            </div>
-            <div class="sector">
-                <div class="text">徵</div>
-            </div>
-            <div class="sector">
-                <div class="text"></div>
-            </div>
-            <div class="sector">
-                <div class="text">羽</div>
-            </div>
-            <div class="sector">
-                <div class="text"></div>
-            </div>
-            <div class="sector">
-                <div class="text">變宮</div>
-            </div>
-        </div>
         </div>
     </main>
 
