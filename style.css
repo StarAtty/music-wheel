@@ -40,18 +40,12 @@ main {
     display: block;
     margin: 0 auto;
     padding: 0.3rem;
-    background-color: #ced;
-    border-top: #eee 0.25rem solid;
-    border-left: #eee 0.25rem solid;
-    border-right: #999 0.25rem solid;
-    border-bottom: #999 0.25rem solid;
-    border-radius: 12.5%;
     color: #000;
     height: 3rem;
     width: 7rem;
     font-size: 1.4rem;
 }
-
+/*
 #middle button:hover {
     background-color: #bcdccc;
 }
@@ -62,7 +56,7 @@ main {
     border-right: #eee 0.25rem solid;
     border-bottom: #eee 0.25rem solid;
 }
-
+*/
 header {
     position: fixed;
     top: 0;
