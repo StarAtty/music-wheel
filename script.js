@@ -10,11 +10,14 @@ var wheel3Texts = [["宮", "", "商", "", "角", "", "變徵", "徵", "", "羽",
 var switchWheelButton = document.getElementById('switchWheel');
 var switchTextButton = document.getElementById('switchText');
 var resetButton = document.getElementById('reset');
+var alignButton = document.getElementById('align');
+
 var subtractionButton = document.getElementById('subtraction');
 var additionButton = document.getElementById('addition');
 var resetLengthButton = document.getElementById('resetLength');
 var theString = document.getElementById('string');
 var stringLength = document.getElementById('stringLength');
+
 var indicator = document.getElementById('indicator');
 
 var indicatorDegree = -45;
@@ -61,13 +64,22 @@ resetButton.addEventListener('click', function () {
     innerWheel.bind();
     outerWheel.unbind();
     document.getElementById("wheel3").style.zIndex = -100;
-    switchWheelButton.innerText = "轉內圈";
+    switchWheelButton.innerText = "轉外圈";
     bound = true;
     innerWheel.speed = 0;
     outerWheel.speed = 0;
     innerWheel.angle = 45;
     outerWheel.angle = 45;
     if (set) switchText();
+});
+
+alignButton.addEventListener('click', function () {
+    innerWheel.speed = 0;
+    outerWheel.speed = 0;
+    let innerWheelOffset = (innerWheel.angle - 15) % 30;
+    let outerWheelOffset = (outerWheel.angle - 15) % 30;
+    innerWheel.angle += (innerWheelOffset > 15) ? (30 - innerWheelOffset) : (-innerWheelOffset);
+    outerWheel.angle += (outerWheelOffset > 15) ? (30 - outerWheelOffset) : (-outerWheelOffset);
 });
 
 function rotateIndicator() {
@@ -112,6 +124,7 @@ resetLengthButton.addEventListener('click', function () {
     additionButton.disabled = true;
     indicatorDegree = -45;
     indicator.style.transform = "rotate(-45deg)";
+    clickCounter = 0;
 });
 
 theString.addEventListener('change', function () {

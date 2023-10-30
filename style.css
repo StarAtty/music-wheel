@@ -40,6 +40,10 @@ main {
     font-size: 1.2rem;
 }
 
+#resetLength {
+    color: red;
+}
+
 #top-right section {
     margin-top: 4px;
 }
@@ -107,11 +111,10 @@ input[type="range"]::-moz-range-track, input[type="range"]::-webkit-range-track 
 #middle button {
     display: block;
     margin: 0 auto;
-    padding: 0.3rem;
     color: #000;
-    height: 3rem;
-    width: 7rem;
-    font-size: 1.4rem;
+    height: 2.8rem;
+    width: 6.4rem;
+    font-size: 1.2rem;
 }
 
 #indicator {
