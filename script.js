@@ -15,16 +15,19 @@ var alignButton = document.getElementById('align');
 var subtractionButton = document.getElementById('subtraction');
 var additionButton = document.getElementById('addition');
 var resetLengthButton = document.getElementById('resetLength');
+var undoButton = document.getElementById('undo');
 var theString = document.getElementById('string');
 var stringLength = document.getElementById('stringLength');
 
 var indicator = document.getElementById('indicator');
 
 var indicatorDegree = -45;
-const propotion = Math.pow(2, 7 / 12) * 2 / 3;
+var propotion = Math.pow(2, 7 / 12) * 2 / 3;
 
 var stringValue = 81;
 var clickCounter = 0;
+
+var steps = [];
 
 function switchText() {
     textSet += 1;
@@ -97,24 +100,34 @@ function clickRotate() {
     rotateIndicator();
 }
 
-subtractionButton.addEventListener('click', function () {
-    stringValue *= 2 / 3;
+function setStringValue(strVal) {
+    stringValue *= strVal;
     theString.value = stringValue;
     stringLength.innerText = theString.value;
+}
+
+subtractionButton.addEventListener('click', function () {
+    setStringValue(2 / 3);
+    steps.push(3 / 2);
     clickRotate();
+    undoButton.disabled = false;
     if (stringValue <= 60.75) {
         additionButton.disabled = false;
     }
 });
 
-additionButton.addEventListener('click', function () {
-    stringValue *= 4 / 3;
-    theString.value = stringValue;
-    stringLength.innerText = theString.value;
-    clickRotate();
+function checkStringLength () {
     if (stringValue > 60.75) {
         additionButton.disabled = true;
     }
+}
+
+additionButton.addEventListener('click', function () {
+    setStringValue(4 / 3);
+    steps.push(3 / 4);
+    clickRotate();
+    undoButton.disabled = false;
+    checkStringLength();
 });
 
 resetLengthButton.addEventListener('click', function () {
@@ -125,6 +138,8 @@ resetLengthButton.addEventListener('click', function () {
     indicatorDegree = -45;
     indicator.style.transform = "rotate(-45deg)";
     clickCounter = 0;
+    undoButton.disabled = true;
+    steps = [];
 });
 
 theString.addEventListener('change', function () {
@@ -133,6 +148,16 @@ theString.addEventListener('change', function () {
 
 theString.addEventListener('input', function () {
     stringLength.innerText = theString.value;
+});
+
+undoButton.addEventListener('click', function () {
+    propotion *= -1;
+    clickCounter--;
+    setStringValue(steps.pop());
+    clickRotate();
+    propotion *= -1;
+    checkStringLength();
+    if (steps.length == 0) undoButton.disabled = true;
 });
 
 var innerWheel = new Propeller(document.getElementById('rotate'), {
