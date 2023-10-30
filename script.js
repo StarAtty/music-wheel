@@ -15,8 +15,13 @@ var additionButton = document.getElementById('addition');
 var resetLengthButton = document.getElementById('resetLength');
 var theString = document.getElementById('string');
 var stringLength = document.getElementById('stringLength');
+var indicator = document.getElementById('indicator');
+
+var indicatorDegree = -45;
+const propotion = Math.pow(2, 7 / 12) * 2 / 3;
 
 var stringValue = 81;
+var clickCounter = 0;
 
 function switchText() {
     textSet += 1;
@@ -25,6 +30,10 @@ function switchText() {
         document.getElementById('wheel1').childNodes[i * 2 + 1].innerHTML = '<div class="text">' + wheel1Texts[set][i] + "</div>";
         document.getElementById('wheel2').childNodes[i * 2 + 1].innerHTML = '<div class="text">' + wheel2Texts[set][i] + "</div>";
         document.getElementById('wheel3').childNodes[i * 2 + 1].innerHTML = '<div class="text">' + wheel3Texts[set][i] + "</div>";
+    }
+    if (clickCounter % 2) {
+        indicatorDegree += 180;
+        rotateIndicator();
     }
 }
 
@@ -37,13 +46,13 @@ switchWheelButton.addEventListener('click', function () {
         innerWheel.unbind();
         outerWheel.bind();
         document.getElementById("wheel3").style.zIndex = 50;
-        switchWheelButton.innerText = "轉外圈";
+        switchWheelButton.innerText = "轉內圈";
         bound = false;
     } else {
         innerWheel.bind();
         outerWheel.unbind();
         document.getElementById("wheel3").style.zIndex = -100;
-        switchWheelButton.innerText = "轉內圈";
+        switchWheelButton.innerText = "轉外圈";
         bound = true;
     }
 });
@@ -61,19 +70,36 @@ resetButton.addEventListener('click', function () {
     if (set) switchText();
 });
 
+function rotateIndicator() {
+    indicator.style.transform = "rotate(" + indicatorDegree + "deg)";
+}
+
+function clickRotate() {
+    if (set) {
+        indicatorDegree += 30 * propotion;
+    } else {
+        indicatorDegree += 210 * propotion;
+    }
+
+    clickCounter++;
+    rotateIndicator();
+}
+
 subtractionButton.addEventListener('click', function () {
-    stringValue *= 2/3;
+    stringValue *= 2 / 3;
     theString.value = stringValue;
     stringLength.innerText = theString.value;
+    clickRotate();
     if (stringValue <= 60.75) {
         additionButton.disabled = false;
     }
 });
 
 additionButton.addEventListener('click', function () {
-    stringValue *= 4/3;
+    stringValue *= 4 / 3;
     theString.value = stringValue;
     stringLength.innerText = theString.value;
+    clickRotate();
     if (stringValue > 60.75) {
         additionButton.disabled = true;
     }
@@ -84,13 +110,15 @@ resetLengthButton.addEventListener('click', function () {
     stringValue = 81;
     stringLength.innerText = theString.value;
     additionButton.disabled = true;
+    indicatorDegree = -45;
+    indicator.style.transform = "rotate(-45deg)";
 });
 
-theString.addEventListener('change', function() {
+theString.addEventListener('change', function () {
     stringValue = theString.value;
 });
 
-theString.addEventListener('input', function() {
+theString.addEventListener('input', function () {
     stringLength.innerText = theString.value;
 });
 

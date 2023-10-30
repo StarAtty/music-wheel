@@ -20,7 +20,7 @@
         <h2>三分損益</h2>
         <label for="string">弦長</label>
         <span id="stringLength">81</span>
-        <input type="range" id="string" min="0" max="81" value="81" step="0.001"></input>
+        <input type="range" id="string" min="0" max="81" value="81" step="0.001" autocomplete="off"></input>
         <section>
             <button id="subtraction">三分去一</button>
             <button id="addition" disabled>三分益一</button>
@@ -30,12 +30,14 @@
 
     <div id="middle">
         <button id="switchText">換排序</button>
-        <button id="switchWheel">轉內圈</button>
+        <button id="switchWheel">轉外圈</button>
         <button id="reset">重置</button>
     </div>
+
     <main>
         <div id="wheels">
             <div id="rotate">
+                <div id="indicator"></div>
                 <div id="wheel1" class="wheel">
                     <div class="sector">
                         <div class="text">黃鐘</div>
