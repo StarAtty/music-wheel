@@ -1,4 +1,4 @@
-var textSet = 0;
+var textSet = 1;
 var set = 0;
 var wheel1Texts = [["黃鐘", "大呂", "太簇", "夾鐘", "姑洗", "仲呂", "蕤賓", "林鐘", "夷則", "南呂", "無射", "應鐘"],
 ["黃鐘", "林鐘", "太簇", "南呂", "姑洗", "應鐘", "蕤賓", "大呂", "夷則", "夾鐘", "無射", "仲呂"]];
@@ -45,7 +45,7 @@ function switchText() {
 
 switchTextButton.addEventListener('click', switchText);
 
-var bound = true;
+var bound = false;
 
 switchWheelButton.addEventListener('click', function () {
     if (bound) {
@@ -64,11 +64,11 @@ switchWheelButton.addEventListener('click', function () {
 });
 
 resetButton.addEventListener('click', function () {
-    innerWheel.bind();
-    outerWheel.unbind();
-    document.getElementById("wheel3").style.zIndex = -100;
-    switchWheelButton.innerText = "轉外圈";
-    bound = true;
+    innerWheel.unbind();
+    outerWheel.bind();
+    document.getElementById("wheel3").style.zIndex = 50;
+    switchWheelButton.innerText = "轉內圈";
+    bound = false;
     innerWheel.speed = 0;
     outerWheel.speed = 0;
     innerWheel.angle = 45;
@@ -179,7 +179,3 @@ var outerWheel = new Propeller(document.getElementById('wheel3'), {
         console.log('start');
     }
 });
-
-window.onload = function() {
-    switchTextButton.click();
-}

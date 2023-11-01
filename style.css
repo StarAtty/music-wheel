@@ -183,7 +183,7 @@ h1 {
     left: 0;
     width: 43.75rem;
     height: 43.75rem;
-    z-index: -100;
+    z-index: 50;
 }
 
 .wheel {
