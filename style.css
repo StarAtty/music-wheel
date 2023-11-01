@@ -59,8 +59,9 @@ label {
 
 input[type="range"] {
     background-color: #ced;
-    width: 15rem;
+    width: 13.2rem;
     height: 0.4rem;
+    margin: 0 0 0 -0.4rem;
     border-radius: 6px;
     color: #000;
     border: 0.05rem #000 dotted;

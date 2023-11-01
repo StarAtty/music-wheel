@@ -179,3 +179,7 @@ var outerWheel = new Propeller(document.getElementById('wheel3'), {
         console.log('start');
     }
 });
+
+window.onload = function() {
+    switchTextButton.click();
+}
